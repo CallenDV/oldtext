@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OldText</title>
+    <style>
+        body { font-family: sans-serif; margin: 10px; }
+        textarea { width: 100%; height: 300px; }
+        button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <textarea id="editor" rows="20" cols="80"></textarea><br>
+    <button onclick="saveText()">Save</button>
+    <button onclick="loadText()">Load</button>
+    <button onclick="clearText()">Clear</button>
+    <button onclick="boldText()">Bold</button>
+    <button onclick="italicText()">Italic</button>
+    <button onclick="countWords()">Word Count</button>
+
+    <script>
+    function saveText() {
+        var text = document.getElementById('editor').value;
+        document.cookie = "savedText=" + escape(text);
+        alert('Text saved!');
+    }
+
+    function loadText() {
+        var cookies = document.cookie.split(';');
+        for(var i=0; i < cookies.length; i++) {
+            var c = cookies[i].trim();
+            if (c.indexOf("savedText=") == 0) {
+                document.getElementById('editor').value = unescape(c.substring(10, c.length));
+                return;
+            }
+        }
+        alert('No saved text found.');
+    }
+
+    function clearText() {
+        document.getElementById('editor').value = '';
+    }
+
+    function boldText() {
+        var textarea = document.getElementById('editor');
+        var start = textarea.selectionStart;
+        var end = textarea.selectionEnd;
+        var sel = textarea.value.substring(start, end);
+        var replacement = '*' + sel + '*';
+        textarea.value = textarea.value.substring(0, start) + replacement + textarea.value.substring(end);
+    }
+
+    function italicText() {
+        var textarea = document.getElementById('editor');
+        var start = textarea.selectionStart;
+        var end = textarea.selectionEnd;
+        var sel = textarea.value.substring(start, end);
+        var replacement = '_' + sel + '_';
+        textarea.value = textarea.value.substring(0, start) + replacement + textarea.value.substring(end);
+    }
+
+    function countWords() {
+        var text = document.getElementById('editor').value;
+        var wordCount = text.split(/\s+/).filter(function(n) { return n != '' }).length;
+        alert('Word count: ' + wordCount);
+    }
+    </script>
+</body>
+</html>
