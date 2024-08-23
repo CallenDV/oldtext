@@ -1,8 +1,4 @@
-Here's the updated README with badges indicating the status, language, and compatibility:
-
----
-
-# Lightweight Text Editor
+# OldText
 
 ![Project Status](https://img.shields.io/badge/status-active-brightgreen) ![HTML](https://img.shields.io/badge/language-HTML-blue) ![Compatible with Windows 95](https://img.shields.io/badge/compatible-Windows%2095-lightgrey)
 
