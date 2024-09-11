@@ -2,13 +2,13 @@
 
 ![Project Status](https://img.shields.io/badge/status-active-brightgreen) ![HTML](https://img.shields.io/badge/language-HTML-blue) ![Compatible with Windows 95](https://img.shields.io/badge/compatible-Windows%2095-lightgrey)
 
-A simple, lightweight text editor built with HTML, CSS, and JavaScript. This text editor is designed for basic text manipulation and includes features such as saving, loading, clearing text, and formatting options like bold and italic. Additionally, it offers a word count functionality.
+A simple, lightweight text editor built with HTML, CSS, and JavaScript. This text editor is designed for basic text manipulation and includes features such as saving, loading, clearing text, and formatting options like bold and italic (it applies in Markdown, and doesn't apply it on screen). Additionally, it offers a word count functionality.
 
 ## Features
 
 - **Save & Load Text**: Save your text using cookies and retrieve it anytime.
 - **Clear Text**: Clear the entire text area with a single click.
-- **Text Formatting**:
+- **Text Formatting in Markdown**:
   - **Bold**: Highlight text and make it bold using markdown-style `*` wrapping.
   - **Italic**: Highlight text and italicize it with `_` wrapping.
 - **Word Count**: Quickly count the number of words in your text.
